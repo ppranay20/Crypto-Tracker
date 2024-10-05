@@ -8,12 +8,10 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className='overflow-hidden'>
+      <div className='overflow-hidden'>
           <Navbar />
           {children}
         <ToastContainer />
-      </body>
-    </html>
+      </div>
   );
 }
