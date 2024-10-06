@@ -4,30 +4,15 @@ import { IoArrowBackOutline } from "react-icons/io5";
 import Image from "next/image";
 import { useCryptoStore } from "@/utils/store";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
-import {  redirect, useRouter } from "next/navigation";
-import Loading from "@/components/Loading";
+import {  useRouter } from "next/navigation";
 
 
 export default function page() {
     const selectedCrypto = useCryptoStore((state) => state.selectedCrypto);
-    const session = useSession();
     const router = useRouter();
 
-    if(session.status === "loading"){
-        return <div className="h-screen flex justify-center items-center">
-            <Loading />
-        </div>
-    }
-
-    setTimeout(() => {
-        if(session.status === "unauthenticated"){
-            router.push("/auth/signin");
-        }
-    },2000)
-
     if(!selectedCrypto){
-        redirect("/");
+        router.push("/");
     }
 
   return (
