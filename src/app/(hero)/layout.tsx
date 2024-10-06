@@ -8,7 +8,7 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-      <div className='overflow-hidden'>
+      <div className='h-screen overflow-hidden'>
           <Navbar />
           {children}
         <ToastContainer />

@@ -10,7 +10,7 @@ export default async function page() {
   }
 
   return (
-    <div className="min-h-screen overflow-y-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
+    <div className="h-full overflow-y-auto bg-gray-100 dark:bg-gray-900 transition-colors duration-200">
       <Hero />
     </div>
   )
