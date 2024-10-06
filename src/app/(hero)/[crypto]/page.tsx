@@ -20,9 +20,11 @@ export default function page() {
         </div>
     }
 
-    if(session.status === "unauthenticated"){
-        router.push("/auth/signin");
-    }
+    setTimeout(() => {
+        if(session.status === "unauthenticated"){
+            router.push("/auth/signin");
+        }
+    },2000)
 
     if(!selectedCrypto){
         redirect("/");
